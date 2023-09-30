@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# print "Best school" ten times using while loop.
+TEN=10
+I=0
+while [I -lt TEN]
+do
+	echo "Best school"
+	I="I + 1"
+done
