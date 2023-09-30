@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Disply list of currently running processes
-ps -aux
+
+ps -faux
