@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# print "Best school" ten times using while loop
+#+ but on the 9th iteration, display "best School" 
+#+ then "Hi" on a newline..
+I=0
+while [ $I -lt 10 ]
+do
+	if [ $I -eq 8 ] 
+	then
+		echo "Best School"
+		echo "Hi"
+	else		
+		echo "Best school"
+	fi
+	((I++))
+done
