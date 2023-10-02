@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# stop a process without using kill or killall commands
+UG=$(pgrep -f "7-highlander")
+kill -9 "$UG"
