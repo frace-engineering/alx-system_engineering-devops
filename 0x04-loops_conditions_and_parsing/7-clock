@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# display the time for 12 hours and 59 minutes
+H=0
+while [ $H -lt 13 ]
+do
+	# display te hour
+	echo "Hour: $H" 
+	# check if hour is less than 12
+	if [ $H -lt 12 ]
+	then
+		M=1
+		# loop through minutes from 1 to 59
+		while [ $M -lt 60 ]
+		do
+			# display the minute
+			echo "$M"
+			# increment the minute
+			(( M++ ))
+		done
+	fi
+	# increment the hour
+	(( H++ ))
+done 

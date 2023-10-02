@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# use for loop to display the content of the current directory
+#+ not the hidden files.
+#+ only the file name after the leading '-'
+for file in *
+do
+	if [[ $file != .* ]]
+	then
+		# remove the '-' and its prefix from the file name and display it
+		echo "${file#*-}"
+	fi
+done
