@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# display the listening sockets and the PID of the program to which the socket is attched
+netstat -tlup | awk '/tcp/ {print $4,  $6}' |
+	while read line
+	do
+		echo "$line" | awk '{print $1}'
+		echo "ps $line" | awk '{print $2}'
+	done
