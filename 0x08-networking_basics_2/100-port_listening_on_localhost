@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # display the activities on port 98 by listening to the port
 port=98
-nc -l -p "$port"
+nc -l -p localhost "$port"
