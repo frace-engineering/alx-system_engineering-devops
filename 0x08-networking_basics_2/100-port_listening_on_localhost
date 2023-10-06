@@ -2,3 +2,4 @@
 # display the activities on port 98 by listening to the port
 port=98
 nc -l -p $port
+telnet localhost $port
