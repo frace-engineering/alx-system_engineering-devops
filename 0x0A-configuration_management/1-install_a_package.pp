@@ -3,6 +3,12 @@
 package {'flask':
   ensure   => 'installed',
   provider => 'pip3',
+  require  => [Exec['install_flask'], ['werkzeug']]
+}
+
+package {'werkzeug':
+  ensure   => 'latest',
+  provider => 'pip3',
   require  => Exec['install_flask'],
 }
 
