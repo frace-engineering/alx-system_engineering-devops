@@ -1,5 +1,5 @@
 # Creat a file using puppet in the /tmp/school path
-file { 'create file':
+file { 'school':
   ensure  => 'present',
   content => 'I love School',
   owner   => 'www-data',
