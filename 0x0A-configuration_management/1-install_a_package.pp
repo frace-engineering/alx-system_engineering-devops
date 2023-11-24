@@ -1,8 +1,12 @@
 # Install 'flask ffrom pip3 using puppet.
 
-package {'flask -v 2.1.0':
-  ensure   => 'vserion 2.1.0',
-  require  => 'install flask'
-  exec {'install flask':
-  command => '/usr/bin/pip3 install flask',
+package {'flask':
+  ensure   => 'installed',
+  provider => 'pip3',
+  require  => Exec['install_flask'],
+}
+
+exec {'install_flask':
+  command => '/usr/bin/pip3 install flask==2.1.0',
+  path    => ['/usr/bin'],
 }
