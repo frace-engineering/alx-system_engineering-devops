@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Genarate ssh key pairs store in the 'school' file
+#+ with 'betty' as the passphrase
+ssh-kygen -f school -t rsa -N betty
