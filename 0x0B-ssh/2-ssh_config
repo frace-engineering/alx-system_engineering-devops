@@ -1,0 +1,8 @@
+# Local SSH client configuration
+# To connect to Host as server1
+Host server1
+	HostName 181428-web-01
+	User ubuntu
+	IdentityFile ~/.ssh/school
+	PreferredAuthentications publickey
+	PasswordAuthentication no
