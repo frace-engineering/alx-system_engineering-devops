@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash csript to install and configure nginx on the remote server
+
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo sed -i 's/.*listen\(.*\)80.*/\tlisten 80;/g' /etc/nginx/sites-available/default
+sudo echo '<!DOCTYPE html><html><head><title>web-01</title></head><body><h1>Hello World!</h1></body></html>' | sudo tee /var/www/html/index.html
+
+sudo service nginx reload
+
+
