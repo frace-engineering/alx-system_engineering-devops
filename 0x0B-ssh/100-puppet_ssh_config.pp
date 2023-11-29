@@ -1,10 +1,10 @@
 # A puppet manifest that configures SSH client.
 
 file { '/home/fugwungene/.ssh/config':
-  ensure => 'file',
-  owner  => 'fugwungene',
-  group  => 'fugwungene',
-  mode   => '0600',
+  ensure  => 'file',
+  owner   => 'fugwungene',
+  group   => 'fugwungene',
+  mode    => '0600',
   content => '<<-EOT
     Host server1
       HostName 181408-web-01
@@ -13,4 +13,4 @@ file { '/home/fugwungene/.ssh/config':
       PreferredAuthentications publickey
       PasswordAuthentication no
   EOT'
-} 
+}
