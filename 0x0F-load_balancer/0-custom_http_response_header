@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Bash script that authomates the configuration of a brand new ubuntu server.
+# Add a http header "X-Served-By"
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html
+sudo sed -i "50i rewrite ^/redirect_me https://twitter.com/home;" /etc/nginx/sites-enabled/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/page_error_404.html
+sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+sed -i "/http {/a \ \tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf 
+sudo nginx -t
+sudo service nginx restart 
