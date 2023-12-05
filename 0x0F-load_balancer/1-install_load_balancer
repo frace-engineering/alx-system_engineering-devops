@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Install and configure HAproxy on your lb-01 server.
-# Admin Redundancy 1238-web-01 and 1238-web-02
+# Install and configure HAproxy on the lb-01 server.
+# Admin Redundancy 181408-web-01 and 181408-web-02
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:vbernat/haproxy-1.8
 
