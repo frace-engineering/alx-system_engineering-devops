@@ -1,0 +1,40 @@
+#!/bin/env bash
+#Bash script that displays information bout subdomains
+
+function audit_subdomain {
+  # Use local to assign variable names command line arguments	
+  local domain=$1
+  local subdomain=$2
+  # Check if subdomain was passed, use it, if not use the hardcoded array => subdomains.
+  if [[ -z $subdomain ]]; then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+  else
+    subdomains=("$subdomain")
+  fi
+  # Iterate through the array of subdomains and dig them
+  for sub in "${subdomains[@]}"; do
+     # Get the type of the record using awk and print it
+     record_type=$(dig +short -t CNAME "$sub.$domain" | awk '{print "CNAME"}')
+    if [[ -z $record_type ]]; then
+      record_type=$(dig +short -t A "$sub.$domain" | awk '{print "A"}')
+    fi
+
+    destination=$(dig +short "$sub.$domain" | awk 'NR==1{print $1}')
+
+    if [[ -n $destination ]]; then
+      echo "The subdomain $sub is a $record_type record and points to $destination"
+    else
+      echo "The subdomain $sub does not exist"
+    fi
+  done
+}
+
+domain=$1
+subdomain=$2
+
+if [[ -z $domain ]]; then
+  echo "Please provide a domain name."
+  exit 1
+fi
+
+audit_subdomain "$domain" "$subdomain"
