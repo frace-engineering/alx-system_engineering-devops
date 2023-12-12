@@ -43,7 +43,8 @@ frontend www-https
 
 backend My_Web_Servers
          mode http
-	 redirect scheme https if !{ ssl_fc }
+	 http-request redirect code 301 location https://www.frace.tech%[capture.req.uri] if !{ ssl_fc }
+	 #redirect scheme https if !{ ssl_fc }
          balance roundrobin
          server 181408-web-01 52.86.247.157:80 check
          server 181408-web-02 54.90.47.55:80 check
