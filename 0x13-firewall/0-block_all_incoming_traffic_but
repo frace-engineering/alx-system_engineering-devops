@@ -1,0 +1,4 @@
+ufw allow 22/ssh
+ufw allow 443/https,ssl
+ufw allow 80/http
+ufw enable
