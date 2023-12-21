@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This script takes a CL argument and run the whoami command
+sudo -u "$1" whoami
