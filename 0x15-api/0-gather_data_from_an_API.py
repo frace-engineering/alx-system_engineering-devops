@@ -1,4 +1,6 @@
-cript that, using this REST API, for a given employee ID, returns
+#!/usr/bin/python3
+"""
+Script that, uses REST API, for a given employee ID, and returns
 information about his/her TODO list progress
 """
 import requests
