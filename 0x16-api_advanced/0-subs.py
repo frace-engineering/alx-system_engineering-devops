@@ -11,7 +11,7 @@ def number_of_subscribers(subreddit):
     """Return total number of subscribers on the subreddit.
 
     If an invalid subreddit is given, return 0 """
-    url = "https://www.reddit.com/r/{:s}/about.json".format(subreddit)
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     """headers = {
         "User-Agent": "linux:0x16.api.advanced:v1.00 (by /u/bdov_)"
     }"""
