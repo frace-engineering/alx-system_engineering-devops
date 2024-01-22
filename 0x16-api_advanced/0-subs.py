@@ -21,7 +21,7 @@ def number_of_subscribers(subreddit):
         return 0
 
     try:
-       result = response.json()["data"]["subscribers"]
-       return result
+        result = response.json()["data"]["subscribers"]
+        return result
     except (KeyError, ValueError):
-       return 0
+        return 0
